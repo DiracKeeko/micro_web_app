@@ -5,7 +5,7 @@ const config = {
   devServer: {
     hot: false,
     disableHostCheck: true,
-    port: 3000,
+    port: 7788,
     open: true,
     overlay: {
       warnings: false,
