@@ -1,11 +1,12 @@
 <template>
   <div id="app">
-    <div>导航栏</div>
+    <CusHeader></CusHeader>
     <RouterView id='router-container' />
   </div>
 </template>
 
 <script>
+import CusHeader from "@/components/CusHeader.vue";
 
 export default {
   name: "App"
