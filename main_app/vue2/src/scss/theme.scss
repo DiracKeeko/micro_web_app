@@ -1,0 +1,136 @@
+@import './color.scss';
+@import './variable.scss';
+
+body {
+  // 遍历_color.scss中的$colors,生成css变量, 如 --success-color: #00bf30;
+  @each $colorKey, $colorVal in $colors {
+    --#{$colorKey}-color: #{$colorVal};
+  }
+
+  // 遍历_color.scss中的$colors,生成class, 如 .text-dark { color: #333333; }
+  @each $colorKey, $colorVal in $colors {
+    .text-#{$colorKey} {
+      color: $colorVal;
+    }
+    .bg-#{$colorKey} {
+      background-color: $colorVal;
+    }
+  }
+
+  // 嵌套循环的 @each
+  @each $typeKey, $typeVal in $spacing-types {
+    // .m-1 { margin: 0.25rem }
+    @each $sizeKey, $size in $spacing-sizes {
+      .#{$typeKey}-#{$sizeKey} {
+        #{$typeVal}: $size * $base-spacing-size;
+      }
+    }
+    // 左右间距mx; 上下间距my; .mx-1 { margin-left: 0.25rem, margin-right: 0.25rem }
+    @each $sizeKey, $size in $spacing-sizes {
+      .#{$typeKey}x-#{$sizeKey} {
+        #{$typeVal}-left: $size * $base-spacing-size;
+        #{$typeVal}-right: $size * $base-spacing-size;
+      }
+    }
+    // my
+    @each $sizeKey, $size in $spacing-sizes {
+      .#{$typeKey}y-#{$sizeKey} {
+        #{$typeVal}-top: $size * $base-spacing-size;
+        #{$typeVal}-bottom: $size * $base-spacing-size;
+      }
+    }
+    // 单向间距 mt-1, mr-1, mb-1, ml-1
+    @each $dirKey, $dir in $spacing-direction {
+      @each $sizeKey, $size in $spacing-sizes {
+        .#{$typeKey}#{$dirKey}-#{$sizeKey} {
+          #{$typeVal}-#{$dir}: $size * $base-spacing-size;
+        }
+      }
+    }
+  }
+
+  // font sizes
+  @each $sizeKey, $sizeVal in $font-sizes {
+    .fs-#{$sizeKey} {
+      font-size: $sizeVal * $base-font-size;
+    }
+  }
+
+  // font weights
+  @each $key, $val in $font-weights {
+    .fw-#{$key} {
+      font-weight: $val;
+    }
+  }
+
+  .d-flex {
+    display: flex;
+  }
+
+  .flex-column {
+    flex-direction: column;
+  }
+
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  @each $key, $val in $flex-jc {
+    .jc-#{$key} {
+      justify-content: $val;
+    }
+  }
+
+  @each $key, $val in $flex-ai {
+    .ai-#{$key} {
+      align-items: $val;
+    }
+  }
+
+  .text-left {
+    text-align: left;
+  }
+
+  .text-right {
+    text-align: right;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  // @extend
+  .base-border {
+    border: 1px solid var(--dark-color);
+  }
+  .shadow-border {
+    @extend .base-border;
+    box-shadow: 0 0 5px #999;
+  }
+
+  // @mixin + @include
+  @mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+  }
+  .box-with-radius {
+    border: 1px solid #999;
+    @include border-radius(5px);
+  }
+
+}
+
+::-webkit-scrollbar {
+  width: 16px;
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba($color: #000000, $alpha: 0.1);
+  background-clip: padding-box;
+  border: 4px solid transparent;
+  border-radius: 8px;
+}
+

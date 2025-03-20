@@ -1,8 +1,11 @@
-// const path = require('path')
+const path = require("path");
+function resolve(dir) {
+  return path.join(__dirname, dir);
+}
 
-module.exports = {
-  outputDir: 'main-vue2',
-  publicPath: '/main-vue2/',
+const config = {
+  outputDir: "main-vue2",
+  publicPath: "/main-vue2/",
   productionSourceMap: false,
   devServer: {
     hot: false,
@@ -19,10 +22,17 @@ module.exports = {
   configureWebpack: {
     output: {
       jsonpFunction: `webpackJsonp-main-vue2`,
-    }
+    },
+    // resolve: {
+    //   alias: {
+    //     "@": path.resolve(__dirname, "src"),
+    //   },
+    // },
   },
   // chainWebpack: config => {
   //   config.resolve.alias
   //     .set("@micro-zoe/micro-app", path.join(__dirname, '../../../micro-app/lib/index.esm.js'))
   // },
-}
+};
+
+module.exports = config;

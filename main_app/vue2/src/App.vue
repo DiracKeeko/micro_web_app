@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <CusHeader></CusHeader>
-    <RouterView id='router-container' />
+    <div class="app-container">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -9,38 +11,26 @@
 import CusHeader from "@/components/CusHeader.vue";
 
 export default {
-  name: "App"
+  name: 'App',
+  components: {
+    CusHeader
+  }
 }
 </script>
 
-<style>
-body {
-  margin: 0;
-}
-
+<style lang="scss" scoped>
 #app {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  display: flex;
-  text-align: center;
-}
-
-#router-container {
-  flex: 1;
-}
-
-#public-links {
-  padding: 10px 0;
-}
-
-#public-links a {
-  text-decoration: underline;
-  color: -webkit-link;
-  cursor: pointer;
-}
-
-#public-links a:active {
-  color: #f53f3f;
+  // text-align: left;
+  color: #2c3e50;
+  margin-top: 60px;
+  .app-container {
+    background-color: #f5f5f5;
+    min-height: calc(100vh - 150px);
+    padding-top: 60px;
+    overflow-x: hidden;
+  }
 }
 </style>
