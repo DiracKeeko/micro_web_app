@@ -1,30 +1,21 @@
 <template>
   <div class="home">
     <div class="home-page">HomePage</div>
-    <el-button type="primary" @click="emitMessage">主要按钮</el-button>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-
 export default {
   name: "Home",
   components: {},
-  methods: {
-    async emitMessage() {
-      await this.$message("这是一条消息提示");
-      await this.$message({
-        message: "警告，这是一条警告消息",
-        type: "warning",
-      });
-    },
-  },
+  methods: {},
 };
 </script>
 
 <style scoped>
 .home-page {
   margin: 200px 0 0 0;
+  font-size: 50px;
+  font-weight: 600;
 }
 </style>
