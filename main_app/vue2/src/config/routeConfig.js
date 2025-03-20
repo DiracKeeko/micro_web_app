@@ -77,7 +77,13 @@ function recursionPushRouteItem(menuArr, routeArr) {
 function createRouteArrByMenuArr(menuArr) {
   const routeArr = [];
   recursionPushRouteItem(menuArr, routeArr);
-  // routeArr.push({ path: "*", redirect: "/home" });
+  routeArr.push({
+    path: '/:micro(micro-vue|micro-react)/:endPath(.*)', // /micro-vue/ 或者 /micro-react/ 调用MicroApp组件
+    name: 'microApp',
+    meta: { title: 'micro-app' },
+    component: () => import('@/views/microApp/MicroApp.vue')
+  })
+  routeArr.push({ path: "*", redirect: "/home" });
   return routeArr;
 }
 

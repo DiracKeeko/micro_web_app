@@ -7,7 +7,7 @@ import store from "./store";
 import "./plugin/element.js";
 
 import "./config/routeConfig";
-import "./config/microAppConfig"; // 引入乾坤
+// import "./config/microAppConfig"; // 引入乾坤
 
 import "./scss/theme.scss";
 
