@@ -5,18 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  '@micro-zoe/micro-app':
-    specifier: latest
-    version: 1.0.0-rc.5
-  core-js:
-    specifier: ^3.6.5
-    version: 3.20.0
   vue:
     specifier: ^2.6.11
     version: 2.6.14
   vue-router:
-    specifier: ~3.5.1
-    version: 3.5.3(vue@2.6.14)
+    specifier: ~3.1.5
+    version: 3.1.5(vue@2.6.14)
   zone.js:
     specifier: ~0.11.4
     version: 0.11.4
@@ -24,7 +18,7 @@ dependencies:
 devDependencies:
   '@vue/cli-plugin-babel':
     specifier: ^4.5.0
-    version: 4.5.15(@vue/cli-service@4.5.10)(core-js@3.20.0)(vue@2.6.14)
+    version: 4.5.15(@vue/cli-service@4.5.10)(core-js@3.18.2)(vue@2.6.14)
   '@vue/cli-plugin-eslint':
     specifier: ^4.5.0
     version: 4.5.15(@vue/cli-service@4.5.10)(eslint@6.8.0)
@@ -37,6 +31,9 @@ devDependencies:
   babel-eslint:
     specifier: ^10.1.0
     version: 10.1.0(eslint@6.8.0)
+  core-js:
+    specifier: 3.18.2
+    version: 3.18.2
   eslint:
     specifier: ^6.7.2
     version: 6.8.0
@@ -1296,10 +1293,6 @@ packages:
       webpack: 4.46.0
     dev: true
 
-  /@micro-zoe/micro-app@1.0.0-rc.5:
-    resolution: {integrity: sha512-Z7Qkp1ZxFc04UYkR6UYPorg/VgACvE0E0Y8tyOKfR9AZmvoSNPdv4TpBFv3FRoYcvMlXW8TnEXhxL1VmCbL+2w==}
-    dev: false
-
   /@mrmlnc/readdir-enhanced@2.2.1:
     resolution: {integrity: sha512-bPHp6Ji8b41szTOcaP63VlnbbO5Ny6dwAATtY6JTjh5N2OLrb5Qk/Th5cRkRQhkWCt+EJsYrNB0MiL+Gpn6e3g==}
     engines: {node: '>=4'}
@@ -1511,7 +1504,7 @@ packages:
       svg-tags: 1.0.0
     dev: true
 
-  /@vue/babel-preset-app@4.5.15(@babel/core@7.16.5)(core-js@3.20.0)(vue@2.6.14):
+  /@vue/babel-preset-app@4.5.15(@babel/core@7.16.5)(core-js@3.18.2)(vue@2.6.14):
     resolution: {integrity: sha512-J+YttzvwRfV1BPczf8r3qCevznYk+jh531agVF+5EYlHF4Sgh/cGXTz9qkkiux3LQgvhEGXgmCteg1n38WuuKg==}
     peerDependencies:
       '@babel/core': '*'
@@ -1536,7 +1529,7 @@ packages:
       '@vue/babel-plugin-jsx': 1.1.1(@babel/core@7.16.5)
       '@vue/babel-preset-jsx': 1.2.4(@babel/core@7.16.5)
       babel-plugin-dynamic-import-node: 2.3.3
-      core-js: 3.20.0
+      core-js: 3.18.2
       core-js-compat: 3.20.0
       semver: 6.3.0
       vue: 2.6.14
@@ -1625,13 +1618,13 @@ packages:
     resolution: {integrity: sha512-0zI0kANAVmjFO2LWGUIzdGPMeE3+9k+KeRDXsUqB30YfRF7abjfiiRPq5BU9pOzlJbVdpRkisschBrvdJqDuDg==}
     dev: true
 
-  /@vue/cli-plugin-babel@4.5.15(@vue/cli-service@4.5.10)(core-js@3.20.0)(vue@2.6.14):
+  /@vue/cli-plugin-babel@4.5.15(@vue/cli-service@4.5.10)(core-js@3.18.2)(vue@2.6.14):
     resolution: {integrity: sha512-hBLrwYfFkHldEe34op/YNgPhpOWI5n5DB2Qt9I/1Epeif4M4iFaayrgjvOR9AVM6WbD3Yx7WCFszYpWrQZpBzQ==}
     peerDependencies:
       '@vue/cli-service': ^3.0.0 || ^4.0.0-0
     dependencies:
       '@babel/core': 7.16.5
-      '@vue/babel-preset-app': 4.5.15(@babel/core@7.16.5)(core-js@3.20.0)(vue@2.6.14)
+      '@vue/babel-preset-app': 4.5.15(@babel/core@7.16.5)(core-js@3.18.2)(vue@2.6.14)
       '@vue/cli-service': 4.5.10(vue-template-compiler@2.6.14)(vue@2.6.14)
       '@vue/cli-shared-utils': 4.5.15
       babel-loader: 8.2.3(@babel/core@7.16.5)(webpack@4.46.0)
@@ -2232,6 +2225,7 @@ packages:
 
   /anymatch@2.0.0(supports-color@6.1.0):
     resolution: {integrity: sha512-5teOsQWABXHHBFP9y3skS5P3d/WfWXpv3FUpy+LorMrNYaT9pI4oLMQX7jzQ2KklNpGpWHzdCXTDT2Y3XGlZBw==}
+    requiresBuild: true
     dependencies:
       micromatch: 3.1.10(supports-color@6.1.0)
       normalize-path: 2.1.1
@@ -2364,6 +2358,7 @@ packages:
 
   /async-each@1.0.3:
     resolution: {integrity: sha512-z/WhQ5FPySLdvREByI2vZiTWwCnF0moMJ1hK9YQwDTHKh6I7/uSckMetoRGb5UBZPC1z0jlw+n/XCgjeH7y1AQ==}
+    requiresBuild: true
     dev: true
 
   /async-limiter@1.0.1:
@@ -2534,6 +2529,7 @@ packages:
   /binary-extensions@1.13.1:
     resolution: {integrity: sha512-Un7MIEDdUC5gNpcGDV97op1Ywk748MpHcFTHoYs6qnj1Z3j7I53VG3nwZhKzoBZmbdRNnb6WRdFlwl7tSDuZGw==}
     engines: {node: '>=0.10.0'}
+    requiresBuild: true
     dev: true
 
   /binary-extensions@2.2.0:
@@ -3443,10 +3439,11 @@ packages:
       semver: 7.0.0
     dev: true
 
-  /core-js@3.20.0:
-    resolution: {integrity: sha512-KjbKU7UEfg4YPpskMtMXPhUKn7m/1OdTHTVjy09ScR2LVaoUXe8Jh0UdvN2EKUR6iKTJph52SJP95mAB0MnVLQ==}
+  /core-js@3.18.2:
+    resolution: {integrity: sha512-zNhPOUoSgoizoSQFdX1MeZO16ORRb9FFQLts8gSYbZU5FcgXhp24iMWMxnOQo5uIaIG7/6FA/IqJPwev1o9ZXQ==}
     deprecated: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
     requiresBuild: true
+    dev: true
 
   /core-util-is@1.0.2:
     resolution: {integrity: sha512-3lqz5YjWTYnW6dlDa5TLaTCcShfar1e40rmcJVwCBJC6mWlFuj0eCHIElmG1g5kyuJ/GD+8Wn4FFCcz4gJPfaQ==}
@@ -4914,7 +4911,7 @@ packages:
     resolution: {integrity: sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw==}
     engines: {node: '>= 4.0'}
     os: [darwin]
-    deprecated: The v1 package contains DANGEROUS / INSECURE binaries. Upgrade to safe fsevents v2
+    deprecated: Upgrade to fsevents v2 to mitigate potential security issues
     requiresBuild: true
     dependencies:
       bindings: 1.5.0
@@ -5595,6 +5592,7 @@ packages:
   /is-binary-path@1.0.1:
     resolution: {integrity: sha512-9fRVlXc0uCxEDj1nQzaWONSpbTfx0FmJfzHF7pwlI8DkWGoHBBea4Pg5Ky0ojwwxQmnSifgbKkI06Qv0Ljgj+Q==}
     engines: {node: '>=0.10.0'}
+    requiresBuild: true
     dependencies:
       binary-extensions: 1.13.1
     dev: true
@@ -6602,6 +6600,7 @@ packages:
   /normalize-path@2.1.1:
     resolution: {integrity: sha512-3pKJwH184Xo/lnH6oyP1q2pMd7HcypqqmRs91/6/i2CGtWwIKGCkOOMTm/zXbgTEWHw1uNpNi/igc3ePOYHb6w==}
     engines: {node: '>=0.10.0'}
+    requiresBuild: true
     dependencies:
       remove-trailing-separator: 1.1.0
     dev: true
@@ -7699,6 +7698,7 @@ packages:
   /readdirp@2.2.1(supports-color@6.1.0):
     resolution: {integrity: sha512-1JU/8q+VgFZyxwrJ+SVIOsh+KywWGpds3NTqikiKpDMZWScmAYyKIgqkO+ARvNWJfXeXR1zxz7aHF4u4CyH6vQ==}
     engines: {node: '>=0.10'}
+    requiresBuild: true
     dependencies:
       graceful-fs: 4.2.8
       micromatch: 3.1.10(supports-color@6.1.0)
@@ -7793,6 +7793,7 @@ packages:
 
   /remove-trailing-separator@1.1.0:
     resolution: {integrity: sha512-/hS+Y0u3aOfIETiaiirUFwDBDzmXPvO+jAfKTitUngIPzdKc6Z0LoFjM/CK5PL4C+eKwHohlHAb6H0VFfmmUsw==}
+    requiresBuild: true
     dev: true
 
   /renderkid@2.0.7:
@@ -8931,6 +8932,7 @@ packages:
   /upath@1.2.0:
     resolution: {integrity: sha512-aZwGpamFO61g3OlfT7OQCHqhGnW43ieH9WZeP7QxN/G/jS4jfqUkZxoryvJgVPEcrl5NL/ggHsSmLMHuH64Lhg==}
     engines: {node: '>=4'}
+    requiresBuild: true
     dev: true
 
   /upper-case@1.1.3:
@@ -9193,8 +9195,8 @@ packages:
     dev: true
     optional: true
 
-  /vue-router@3.5.3(vue@2.6.14):
-    resolution: {integrity: sha512-FUlILrW3DGitS2h+Xaw8aRNvGTwtuaxrRkNSHWTizOfLUie7wuYwezeZ50iflRn8YPV5kxmU2LQuu3nM/b3Zsg==}
+  /vue-router@3.1.5(vue@2.6.14):
+    resolution: {integrity: sha512-BszkPvhl7I9h334GjckCh7sVFyjTPMMJFJ4Bsrem/Ik+B/9gt5tgrk8k4gGLO4ZpdvciVdg7O41gW4DisQWurg==}
     peerDependencies:
       vue: ^2
     dependencies:
