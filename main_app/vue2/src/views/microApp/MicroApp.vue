@@ -1,5 +1,5 @@
 <template>
-  <div class="micro-app-container">
+  <div class="micro-app">
     <div class="micro-app-title">micro-app-title</div>
     <div id="micro-app-container"></div>
   </div>
@@ -72,7 +72,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.micro-container {
-  background: var(--system-container-main-background);
+#micro-app-container {
+  width: 800px;
+  height: 500px;
+  // background: var(--system-container-main-background);
+  border: 1px solid blue;
 }
 </style>

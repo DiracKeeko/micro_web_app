@@ -3,14 +3,14 @@ import store from "@/store";
 // import utils from '@/assets/js/utils';
 
 let entryMap = {
-  subVue2: "http://localhost:7700/subapp/sub-vue/",
+  subVue2: "http://localhost:7700/subapp/sub-vue2/",
   subReact: "http://localhost:7710/subapp/sub-react/",
 };
 
 const isProduction = process.env.NODE_ENV === "production";
 if (isProduction) {
   entryMap = {
-    subVue2: "http://qiankun.case.com/subapp/sub-vue/",
+    subVue2: "http://qiankun.case.com/subapp/sub-vue2/",
     subReact: "http://qiankun.case.com/subapp/sub-react/",
   };
 }
@@ -27,17 +27,17 @@ export const microApps = [
       // user: utils.getStorage('user')
     },
   },
-  {
-    name: "micro-react",
-    entry: entryMap.subReact,
-    activeRule: "/micro-react",
-    container: "#micro-app-container", // 子应用挂载的div
-    props: {
-      routerBase: "/micro-react",
-      // mainStore: store,
-      // user: utils.getStorage('user')
-    },
-  },
+  // {
+  //   name: "micro-react",
+  //   entry: entryMap.subReact,
+  //   activeRule: "/micro-react",
+  //   container: "#micro-app-container", // 子应用挂载的div
+  //   props: {
+  //     routerBase: "/micro-react",
+  //     // mainStore: store,
+  //     // user: utils.getStorage('user')
+  //   },
+  // },
 ];
 
 export const registerApps = () => {
