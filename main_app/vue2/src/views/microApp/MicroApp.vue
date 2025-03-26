@@ -53,10 +53,12 @@ export default {
         path.startsWith(app.activeRule.toString())
       );
       if (!microItem) {
+        console.log("000");
         return;
       }
 
       if (this.microList[microItem.activeRule.toString()]) {
+        console.log("001");
         return;
       }
 
@@ -70,6 +72,8 @@ export default {
       if (pathParam) {
         integralEntry = `${entry}/${pathParam}`;
       }
+
+      console.log("integralEntry->", integralEntry);
 
       const micro = loadMicroApp({ name, entry: integralEntry, container });
       this.$set(this.microList, microItem.activeRule.toString(), micro);

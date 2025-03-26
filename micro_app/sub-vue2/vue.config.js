@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: '/subapp/sub-vue2',
+  publicPath: './',
   devServer: {
     port: 7700, //这里的端口是必须和父应用配置的子应用端口一致
     headers: {
