@@ -21,27 +21,28 @@ export default {
   watch: {
     "$route.path": {
       handler(newPath) {
-        this.activationHandleChange(newPath);
+        this.clearMicroApp();
+        this.processMicroApp(newPath);
       },
       immediate: true,
     },
   },
   mounted() {
     if (!window.qiankunStarted) {
-      window.qiankunStarted = true;
-      registerApps();
-      this.activationHandleChange(this.$route.path);
+      // registerApps();
+      this.processMicroApp(this.$route.path);
     }
     addGlobalUncaughtErrorHandler((event) => console.log(event));
   },
   beforeDestroy() {
-    window.qiankunStarted = false;
-    Object.values(this.microList).forEach((mic) => {
-      mic.unmount();
-    });
+    this.clearMicroApp();
   },
   methods: {
-    async activationHandleChange(path) {
+    async processMicroApp(path) {
+      console.log("processMicroApp start");
+
+      window.qiankunStarted = true;
+
       const activeRules = microApps.map((app) => app.activeRule);
       const isMicro = activeRules.some((rule) => path.startsWith(rule));
       if (!isMicro) {
@@ -59,13 +60,31 @@ export default {
         return;
       }
 
-      const micro = loadMicroApp({ ...microItem });
+      const { name, entry, container } = microItem;
+      let integralEntry = entry;
+
+      const pathPartArr = path.split("/"); // ['', 'micro-vue2'] 或者 ['', 'micro-vue2', 'about']
+      // ↑ --todo 对生产环境的特殊情况这里需要换个连接符
+      const pathParam = pathPartArr[2];
+
+      if (pathParam) {
+        integralEntry = `${entry}/${pathParam}`;
+      }
+
+      const micro = loadMicroApp({ name, entry: integralEntry, container });
       this.$set(this.microList, microItem.activeRule.toString(), micro);
       try {
         await micro.mountPromise;
       } catch (e) {
         console.error("=======", e);
       }
+    },
+    clearMicroApp() {
+      window.qiankunStarted = false;
+      Object.values(this.microList).forEach((microItem) => {
+        microItem.unmount();
+      });
+      this.microList = {};
     },
   },
 };

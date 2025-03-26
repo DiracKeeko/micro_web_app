@@ -16,14 +16,14 @@ const menuConfigArr = [
     "title": "测试案例",
     "hidden": 0,
     "menuType": "inner",
-    "menuId": 3,
+    "menuId": 20,
     "menuItem": [
       {
         "index": "/jsonFormat",
         "title": "JsonFormat",
         "hidden": 0,
         "menuType": "inner",
-        "menuId": 1,
+        "menuId": 21,
         "componentPath": "testCase/TestJsonFormat.vue"
       },
       {
@@ -31,7 +31,7 @@ const menuConfigArr = [
         "title": "eslintCase",
         "hidden": 0,
         "menuType": "inner",
-        "menuId": 2,
+        "menuId": 22,
         "componentPath": "testCase/EslintCase.vue"
       },
       {
@@ -39,8 +39,33 @@ const menuConfigArr = [
         "title": "elPopoverEvent",
         "hidden": 0,
         "menuType": "inner",
-        "menuId": 3,
+        "menuId": 23,
         "componentPath": "testCase/ElPopoverCase.vue"
+      }
+    ]
+  },
+  {
+    "index": "3",
+    "title": "子应用",
+    "hidden": 0,
+    "menuType": "inner",
+    "menuId": 6,
+    "menuItem": [
+      {
+        "index": "/micro-vue2",
+        "title": "microVue2Home",
+        "hidden": 0,
+        "menuType": "inner",
+        "menuId": 60,
+        "componentPath": "microApp/MicroApp.vue"
+      },
+      {
+        "index": "/micro-vue2/about",
+        "title": "microVue2About",
+        "hidden": 0,
+        "menuType": "inner",
+        "menuId": 61,
+        "componentPath": "microApp/MicroApp.vue"
       }
     ]
   }
@@ -77,12 +102,12 @@ function recursionPushRouteItem(menuArr, routeArr) {
 function createRouteArrByMenuArr(menuArr) {
   const routeArr = [];
   recursionPushRouteItem(menuArr, routeArr);
-  routeArr.push({
-    path: '/:micro(micro-vue2|micro-react)/:endPath(.*)', // /micro-vue/ 或者 /micro-react/ 调用MicroApp组件
-    name: 'microApp',
-    meta: { title: 'micro-app' },
-    component: () => import('@/views/microApp/MicroApp.vue')
-  })
+  // routeArr.push({
+  //   path: '/:micro(micro-vue2|micro-react)/:endPath(.*)', // /micro-vue/ 或者 /micro-react/ 调用MicroApp组件
+  //   name: 'microApp',
+  //   meta: { title: 'micro-app' },
+  //   component: () => import('@/views/microApp/MicroApp.vue')
+  // })
   routeArr.push({ path: "*", redirect: "/home" });
   return routeArr;
 }

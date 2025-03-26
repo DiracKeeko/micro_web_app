@@ -3,15 +3,15 @@ import store from "@/store";
 // import utils from '@/assets/js/utils';
 
 let entryMap = {
-  subVue2: "http://localhost:7700/subapp/sub-vue2/",
-  subReact: "http://localhost:7710/subapp/sub-react/",
+  subVue2: "http://localhost:7700/subapp/sub-vue2",
+  subReact: "http://localhost:7710/subapp/sub-react",
 };
 
 const isProduction = process.env.NODE_ENV === "production";
 if (isProduction) {
   entryMap = {
-    subVue2: "http://qiankun.case.com/subapp/sub-vue2/",
-    subReact: "http://qiankun.case.com/subapp/sub-react/",
+    subVue2: "http://qiankun.case.com/subapp/sub-vue2",
+    subReact: "http://qiankun.case.com/subapp/sub-react",
   };
 }
 
