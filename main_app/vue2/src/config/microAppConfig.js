@@ -5,7 +5,7 @@ console.log("qiankun start");
 registerMicroApps([
   {
     name: "microVue2-01",
-    entry: "http://localhost:7700/subapp/sub-vue2/about",
+    entry: "http://localhost:7700/main/micro-vue2", //  与子应用默认地址保持一致
     container: "#all-micro-container",
     activeRule: "/main/micro-vue2",
   },

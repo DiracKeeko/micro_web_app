@@ -6,20 +6,22 @@ import router from './router'
 
 
 let instance = null
-function render(props = {}) {
-  const { container } = props;
-  instance = new Vue({
-    router,
-    render: (h) => h(App),
-  }).$mount(container ? container.querySelector('#app') : '#app');
-}
 
-// function render(props) {
+// function render(props = {}) {
+//   const { container } = props;
 //   instance = new Vue({
 //     router,
-//     render: h => h(App)
-//   }).$mount('#app'); // 这里是挂载到自己的html中  基座会拿到这个挂载后的html 将其插入进去
+//     render: (h) => h(App),
+//   }).$mount(container ? container.querySelector('#app') : '#app');
 // }
+
+function render(props) {
+  instance = new Vue({
+    router,
+    render: h => h(App)
+  }).$mount('#app'); // 这里是挂载到自己的html中  基座会拿到这个挂载后的html 将其插入进去
+}
+
 
 if (window.__POWERED_BY_QIANKUN__) { // 动态添加publicPath
   __webpack_public_path__ = window.__INJECTED_PUBLIC_PATH_BY_QIANKUN__;
