@@ -22,7 +22,8 @@ const routes = [
 
 const router = new VueRouter({
   mode: 'history',
-  base: '/subapp/sub-vue2', // 访问/vue的时候加载
+  base: '/main/micro-vue2', // 访问/vue的时候加载
+  // ## 子应用的base 必须和主应用的 activeRule 一致
   routes
 })
 
