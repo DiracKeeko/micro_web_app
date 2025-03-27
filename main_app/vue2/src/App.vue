@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="foundation-app">
     <CusHeader></CusHeader>
     <div class="app-container">
       <router-view></router-view>
@@ -11,7 +11,7 @@
 import CusHeader from "@/components/CusHeader.vue";
 
 export default {
-  name: 'App',
+  name: 'FoundationApp',
   components: {
     CusHeader
   }
@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#app {
+#foundation-app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
