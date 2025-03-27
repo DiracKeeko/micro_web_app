@@ -3,6 +3,7 @@
     <CusHeader></CusHeader>
     <div class="app-container">
       <router-view></router-view>
+      <div id="all-micro-container"></div>
     </div>
   </div>
 </template>
