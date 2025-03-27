@@ -44,31 +44,31 @@ const menuConfigArr = [
       }
     ]
   },
-  // {
-  //   "index": "3",
-  //   "title": "子应用",
-  //   "hidden": 0,
-  //   "menuType": "inner",
-  //   "menuId": 6,
-  //   "menuItem": [
-  //     {
-  //       "index": "/micro-vue2",
-  //       "title": "microVue2Home",
-  //       "hidden": 0,
-  //       "menuType": "inner",
-  //       "menuId": 60,
-  //       "componentPath": "microApp/MicroApp.vue"
-  //     },
-  //     {
-  //       "index": "/micro-vue2/about",
-  //       "title": "microVue2About",
-  //       "hidden": 0,
-  //       "menuType": "inner",
-  //       "menuId": 61,
-  //       "componentPath": "microApp/MicroApp.vue"
-  //     }
-  //   ]
-  // }
+  {
+    "index": "3",
+    "title": "子应用",
+    "hidden": 0,
+    "menuType": "inner",
+    "menuId": 6,
+    "menuItem": [
+      {
+        "index": "/micro-vue2",
+        "title": "microVue2Home",
+        "hidden": 0,
+        "menuType": "inner",
+        "menuId": 60,
+        "componentPath": "microApp/MicroApp.vue"
+      },
+      {
+        "index": "/micro-vue2/about",
+        "title": "microVue2About",
+        "hidden": 0,
+        "menuType": "inner",
+        "menuId": 61,
+        "componentPath": "microApp/MicroApp.vue"
+      }
+    ]
+  }
 ];
 
 
@@ -108,7 +108,7 @@ function createRouteArrByMenuArr(menuArr) {
   //   meta: { title: 'micro-app' },
   //   component: () => import('@/views/microApp/MicroApp.vue')
   // })
-  // routeArr.push({ path: "*", redirect: "/home" });
+  routeArr.push({ path: "*", redirect: "/home" });
   return routeArr;
 }
 

@@ -3,7 +3,7 @@ import store from "@/store";
 // import utils from '@/assets/js/utils';
 
 let entryMap = {
-  subVue2: "http://localhost:7700/subapp/sub-vue2",
+  subVue2: "http://localhost:7700/main/micro-vue2",
   subReact: "http://localhost:7710/subapp/sub-react",
 };
 

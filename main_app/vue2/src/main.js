@@ -7,7 +7,7 @@ import store from "./store";
 import "./plugin/element.js";
 
 import "./config/routeConfig";
-import "./config/microAppConfig"; // 引入qiankun
+// import "./config/microAppConfig"; // 引入qiankun
 
 import "./scss/theme.scss";
 
