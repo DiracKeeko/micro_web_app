@@ -7,6 +7,10 @@ module.exports = {
       "Access-Control-Allow-Origin": "*"
     }
   },
+  chainWebpack: (config) => {
+    config.module.rule('fonts').use('url-loader').loader('url-loader').options({}).end();
+    config.module.rule('images').use('url-loader').loader('url-loader').options({}).end();
+  },
   configureWebpack: {
     output: {
       //资源打包路径
