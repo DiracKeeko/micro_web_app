@@ -39,6 +39,7 @@ export default {
   },
   methods: {
     async processMicroApp(path) {
+      console.log("path->", path);
       console.log("processMicroApp start");
 
       window.qiankunStarted = true;

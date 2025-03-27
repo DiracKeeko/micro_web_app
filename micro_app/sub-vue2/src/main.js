@@ -37,9 +37,14 @@ export async function bootstrap(props) {
 };
 
 export async function mount(props) {
-  render(props)
+  console.log('[vue] props from main framework', props);
+  render(props);
 }
 
-export async function unmount(props) {
+export async function unmount() {
   instance.$destroy();
+  // ↓ 同一应用之间通过主应用路由控制，这里不能销毁
+  // instance.$el.innerHTML = '';
+  // instance = null;
+  // router = null;
 }

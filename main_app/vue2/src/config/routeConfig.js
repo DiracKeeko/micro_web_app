@@ -52,7 +52,7 @@ const menuConfigArr = [
     "menuId": 6,
     "menuItem": [
       {
-        "index": "/micro-vue2",
+        "index": "/micro-vue2/home",
         "title": "microVue2Home",
         "hidden": 0,
         "menuType": "inner",

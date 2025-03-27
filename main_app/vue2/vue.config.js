@@ -6,7 +6,6 @@ const config = {
     hot: false,
     disableHostCheck: true,
     port: 7788,
-    open: true,
     overlay: {
       warnings: false,
       errors: true,
