@@ -66,6 +66,22 @@ const menuConfigArr = [
         "menuType": "inner",
         "menuId": 61,
         "componentPath": "microApp/MicroApp.vue"
+      },
+      {
+        "index": "/micro-react/home",
+        "title": "microReactHome",
+        "hidden": 0,
+        "menuType": "inner",
+        "menuId": 62,
+        "componentPath": "microApp/MicroApp.vue"
+      },
+      {
+        "index": "/micro-react/about",
+        "title": "microReactAbout",
+        "hidden": 0,
+        "menuType": "inner",
+        "menuId": 63,
+        "componentPath": "microApp/MicroApp.vue"
       }
     ]
   }

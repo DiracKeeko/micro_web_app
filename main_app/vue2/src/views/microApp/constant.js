@@ -3,22 +3,22 @@ import store from "@/store";
 // import utils from '@/assets/js/utils';
 
 let entryMap = {
-  subVue2: "http://localhost:7700/main/micro-vue2",
-  subReact: "http://localhost:7710/subapp/sub-react",
+  microVue2: "http://localhost:7700/main/micro-vue2",
+  microReact: "http://localhost:7800/main/micro-react",
 };
 
 const isProduction = process.env.NODE_ENV === "production";
 if (isProduction) {
   entryMap = {
-    subVue2: "http://qiankun.case.com/subapp/sub-vue2",
-    subReact: "http://qiankun.case.com/subapp/sub-react",
+    microVue2: "http://qiankun.case.com/main/micro-vue2",
+    microReact: "http://qiankun.case.com/main/micro-react",
   };
 }
 
 export const microApps = [
   {
     name: "micro-vue2",
-    entry: entryMap.subVue2,
+    entry: entryMap.microVue2,
     activeRule: "/micro-vue2",
     container: "#micro-app-container", // 子应用挂载的div
     props: {
@@ -27,17 +27,17 @@ export const microApps = [
       // user: utils.getStorage('user')
     },
   },
-  // {
-  //   name: "micro-react",
-  //   entry: entryMap.subReact,
-  //   activeRule: "/micro-react",
-  //   container: "#micro-app-container", // 子应用挂载的div
-  //   props: {
-  //     routerBase: "/micro-react",
-  //     // mainStore: store,
-  //     // user: utils.getStorage('user')
-  //   },
-  // },
+  {
+    name: "micro-react",
+    entry: entryMap.microReact,
+    activeRule: "/micro-react",
+    container: "#micro-app-container", // 子应用挂载的div
+    props: {
+      routerBase: "/micro-react",
+      // mainStore: store,
+      // user: utils.getStorage('user')
+    },
+  },
 ];
 
 export const registerApps = () => {
