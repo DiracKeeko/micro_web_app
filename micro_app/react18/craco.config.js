@@ -1,10 +1,22 @@
 // craco.config.js
 const path = require('path')
+const { name } = require('./package');
+
 module.exports = {
   webpack: {
     alias: {
       '@': path.join(__dirname, 'src') // 允许通过@符号来表示 src目录
-    }
+    },
+    configure: (webpackConfig, { env, paths }) => {
+      // 设置项目的上下文目录
+      // 设置静态资源公共路径
+      webpackConfig.output.library = `${name}-[name]`;
+      webpackConfig.output.libraryTarget = 'umd';
+      // webpack 5 需要把 jsonpFunction 替换成 chunkLoadingGlobal
+      webpackConfig.output.chunkLoadingGlobal = `webpackJsonp_${name}`; 
+      webpackConfig.output.globalObject = 'window';
+      return webpackConfig
+    },
   },
   devServer: {
     port: 7800, // 这里的端口是必须和父应用配置的子应用端口一致
