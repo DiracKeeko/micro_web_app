@@ -5,9 +5,17 @@ import "@/style/index.less";
 
 import App from "./App";
 
+let root: ReactDOM.Root | null = null;
+
 function render(props: { container?: HTMLElement }) {
   const { container } = props;
-  ReactDOM.createRoot(container ? container.querySelector("#root")! : document.getElementById("root")!).render(
+  root = ReactDOM.createRoot(
+    container
+      ? container.querySelector("#root")!
+      : document.getElementById("root")!
+  );
+
+  root.render(
     <React.StrictMode>
       <App />
     </React.StrictMode>
@@ -30,7 +38,11 @@ export async function mount(props: any) {
 }
 
 export async function unmount(props: any) {
-  console.log("[react-sub] unmounted", props);
-  const { container } = props;
-  ReactDOM.createRoot(container ? container.querySelector("#root")! : document.getElementById("root")!).unmount();
+  // console.log("[react-sub] unmounted", props);
+  // const { container } = props;
+  // ReactDOM.createRoot(container ? container.querySelector("#root")! : document.getElementById("root")!).unmount();
+  if (root) {
+    root.unmount(); // 微前端react应用 root变量提升, 避免 `removeChild` 错误
+    root = null;
+  }
 }
