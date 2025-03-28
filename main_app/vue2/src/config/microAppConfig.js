@@ -11,7 +11,7 @@ registerMicroApps([
   },
   {
     name: "micro-react-app1",
-    entry: "http://localhost:8001",
+    entry: "http://localhost:3000",
     container: "#micro-app-container",
     activeRule: "/micro/react1",
   },
