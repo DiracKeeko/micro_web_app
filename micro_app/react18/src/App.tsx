@@ -8,7 +8,7 @@ import About from "@/pages/About";
 // 主应用组件
 const App: React.FC = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/main/micro-react">
       <div id="app">
         {/* 导航栏 */}
         <div id="nav">
