@@ -1,6 +1,7 @@
 // craco.config.js
 const path = require('path')
 const { name } = require('./package');
+const CracoOutputPlugin = require('./cracoConfig/craco-output');
 
 module.exports = {
   webpack: {
@@ -18,6 +19,16 @@ module.exports = {
       return webpackConfig
     },
   },
+  // ↓ 无效配置
+  // plugins: [
+  //   {
+  //     plugin: CracoOutputPlugin,
+  //     options: {
+  //       publicPath: '/main/micro-react'
+  //     }
+  //   }
+  // ],
+  publicPath: "/main/micro-react",
   devServer: {
     port: 7800, // 这里的端口是必须和父应用配置的子应用端口一致
     open: false,

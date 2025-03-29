@@ -74,6 +74,12 @@ export default {
         integralEntry = `${entry}/${pathParam}`;
       }
 
+      // const queryParams = this.$route.query;
+      // console.log("queryParams->", queryParams); // queryParams 是一个对象
+      // if (queryParams) {
+      //   integralEntry += queryParams;
+      // }
+
       console.log("integralEntry->", integralEntry);
 
       const micro = loadMicroApp({ name, entry: integralEntry, container });
