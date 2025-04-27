@@ -4,14 +4,14 @@ import store from "@/store";
 
 let entryMap = {
   microVue2: "http://localhost:7700/main/micro-vue2",
-  microReact: "http://localhost:7800/main/micro-react",
+  microReact: "http://localhost:7800/micro-react",
 };
 
 const isProduction = process.env.NODE_ENV === "production";
 if (isProduction) {
   entryMap = {
     microVue2: "http://qiankun.case.com/main/micro-vue2",
-    microReact: "http://qiankun.case.com/main/micro-react",
+    microReact: "http://qiankun.case.com/micro-react",
   };
 }
 
@@ -22,18 +22,18 @@ export const microApps = [
     activeRule: "/micro-vue2",
     container: "#micro-app-container", // 子应用挂载的div
     props: {
-      routerBase: "/micro-vue2",
+      routerBase: "/main/micro-vue2",
       // mainStore: store,
       // user: utils.getStorage('user')
     },
   },
   {
-    name: "micro-react",
+    name: "microReact",
     entry: entryMap.microReact,
     activeRule: "/micro-react",
     container: "#micro-app-container", // 子应用挂载的div
     props: {
-      routerBase: "/micro-react",
+      routerBase: "/main/micro-react",
       // mainStore: store,
       // user: utils.getStorage('user')
     },

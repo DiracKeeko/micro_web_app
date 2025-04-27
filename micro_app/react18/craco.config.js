@@ -1,7 +1,7 @@
 // craco.config.js
 const path = require("path");
-const { name } = require("./package");
 const CracoOutputPlugin = require("./cracoConfig/craco-output");
+const pkgName = 'microReact'
 
 module.exports = {
   webpack: {
@@ -11,9 +11,9 @@ module.exports = {
     configure: (webpackConfig, { env, paths }) => {
       // 设置项目的上下文目录
       // 设置静态资源公共路径
-      webpackConfig.output.library = { name: `${name}-[name]`, type: "umd" };
+      webpackConfig.output.library = { name: `${pkgName}`, type: "umd" };
       // webpack 5 需要把 jsonpFunction 替换成 chunkLoadingGlobal
-      webpackConfig.output.chunkLoadingGlobal = `webpackJsonp_${name}`;
+      webpackConfig.output.chunkLoadingGlobal = `webpackJsonp_${pkgName}`;
       webpackConfig.output.globalObject = "window";
       return webpackConfig;
     },
@@ -27,7 +27,7 @@ module.exports = {
   //     }
   //   }
   // ],
-  publicPath: "/main/micro-react",
+  publicPath: "/micro-react",
   devServer: {
     port: 7800, // 这里的端口是必须和父应用配置的子应用端口一致
     open: false,
