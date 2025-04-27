@@ -7,7 +7,7 @@ import App from "./App";
 
 let root: ReactDOM.Root | null = null;
 
-function render(props: { container?: HTMLElement }) {
+function render(props: { container?: HTMLElement, routerBase?: string }) {
   const { container } = props;
   root = ReactDOM.createRoot(
     container
@@ -17,7 +17,7 @@ function render(props: { container?: HTMLElement }) {
 
   root.render(
     <React.StrictMode>
-      <App />
+      <App routerBase={routerBase}/>
     </React.StrictMode>
   );
 }

@@ -5,10 +5,14 @@ import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 
+interface AppProps {
+  routerBase?: string;
+}
+
 // 主应用组件
-const App: React.FC = () => {
+const App: React.FC<AppProps> = ({routerBase = "micro-react"}) => {
   return (
-    <BrowserRouter basename="/main/micro-react">
+    <BrowserRouter basename={routerBase}>
       <div id="app">
         {/* 导航栏 */}
         <div id="nav">
