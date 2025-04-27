@@ -63,7 +63,7 @@ export default {
         return;
       }
 
-      const { name, entry, container } = microItem;
+      const { name, entry, container, props } = microItem;
       let integralEntry = entry;
 
       const pathPartArr = path.split("/"); // ['', 'micro-vue2'] 或者 ['', 'micro-vue2', 'about']
@@ -82,7 +82,12 @@ export default {
 
       console.log("integralEntry->", integralEntry);
 
-      const micro = loadMicroApp({ name, entry: integralEntry, container });
+      const micro = loadMicroApp({
+        name,
+        entry: integralEntry,
+        container,
+        props,
+      });
       this.$set(this.microList, microItem.activeRule.toString(), micro);
       try {
         await micro.mountPromise;

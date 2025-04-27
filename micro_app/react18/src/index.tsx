@@ -8,7 +8,7 @@ import App from "./App";
 let root: ReactDOM.Root | null = null;
 
 function render(props: { container?: HTMLElement, routerBase?: string }) {
-  const { container } = props;
+  const { container, routerBase } = props;
   root = ReactDOM.createRoot(
     container
       ? container.querySelector("#root")!
