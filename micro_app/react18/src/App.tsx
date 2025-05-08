@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 
 import Home from "@/pages/Home";
 import About from "@/pages/About";
+import HashAnchor from "@/pages/HashAnchor";
 
 interface AppProps {
   routerBase?: string;
@@ -16,13 +17,14 @@ const App: React.FC<AppProps> = ({routerBase = "micro-react"}) => {
       <div id="app">
         {/* 导航栏 */}
         <div id="nav">
-          <Link to="/home">Home</Link> | <Link to="/about">About</Link>
+          <Link to="/home">Home</Link> | <Link to="/about">About</Link>| <Link to="/hashAnchor">Hash锚点</Link>
         </div>
 
         {/* 路由视图 */}
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/hashAnchor" element={<HashAnchor />} />
         </Routes>
       </div>
     </BrowserRouter>
