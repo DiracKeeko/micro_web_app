@@ -9,6 +9,7 @@ import "./plugin/element.js";
 import "./config/routeConfig";
 // import "./config/microAppConfig"; // 引入qiankun
 
+import "./scss/normalize.css";
 import "./scss/theme.scss";
 
 Vue.config.productionTip = false;
