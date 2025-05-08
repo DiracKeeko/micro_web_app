@@ -1,7 +1,7 @@
-const { name } = require('./package');
+const pkgName = "microVue2"
 
 module.exports = {
-  publicPath: '/main/micro-vue2',
+  publicPath: '/micro-vue2',
   devServer: {
     port: 7700, //这里的端口是必须和父应用配置的子应用端口一致
     headers: {
@@ -16,9 +16,9 @@ module.exports = {
   configureWebpack: {
     output: {
       //资源打包路径
-      library: `${name}-[name]`,
+      library: `${pkgName}-[name]`,
       libraryTarget: 'umd', // 把微应用打包成 umd 库格式
-      jsonpFunction: `webpackJsonp_${name}`, // webpack 5 需要把 jsonpFunction 替换成 chunkLoadingGlobal
+      jsonpFunction: `webpackJsonp_${pkgName}`, // webpack 5 需要把 jsonpFunction 替换成 chunkLoadingGlobal
     },
   }
 }

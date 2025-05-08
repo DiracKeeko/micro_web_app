@@ -3,21 +3,21 @@ import store from "@/store";
 // import utils from '@/assets/js/utils';
 
 let entryMap = {
-  microVue2: "http://localhost:7700/main/micro-vue2",
+  microVue2: "http://localhost:7700/micro-vue2",
   microReact: "http://localhost:7800/micro-react",
 };
 
 const isProduction = process.env.NODE_ENV === "production";
 if (isProduction) {
   entryMap = {
-    microVue2: "http://qiankun.case.com/main/micro-vue2",
+    microVue2: "http://qiankun.case.com/micro-vue2",
     microReact: "http://qiankun.case.com/micro-react",
   };
 }
 
 export const microApps = [
   {
-    name: "micro-vue2",
+    name: "microVue2",
     entry: entryMap.microVue2,
     activeRule: "/micro-vue2",
     container: "#micro-app-container", // 子应用挂载的div
