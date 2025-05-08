@@ -1,6 +1,5 @@
 <template>
   <div class="micro-app">
-    <div class="micro-app-title">micro-app-title</div>
     <div id="micro-app-container"></div>
   </div>
 </template>
@@ -108,9 +107,10 @@ export default {
 
 <style lang="scss" scoped>
 #micro-app-container {
-  width: 800px;
-  height: 500px;
-  // background: var(--system-container-main-background);
+  box-sizing: border-box;
+  width: 100%;
+  height: calc(100vh - 60px);
   border: 1px solid blue;
+  overflow-x: hidden;
 }
 </style>

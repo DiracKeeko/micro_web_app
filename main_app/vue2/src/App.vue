@@ -3,7 +3,6 @@
     <CusHeader></CusHeader>
     <div class="app-container">
       <router-view></router-view>
-      <div id="all-micro-container"></div>
     </div>
   </div>
 </template>
@@ -57,8 +56,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   // text-align: left;
-  color: #2c3e50;
-  margin-top: 60px;
   .app-container {
     background-color: #f5f5f5;
     min-height: calc(100vh - 150px);
