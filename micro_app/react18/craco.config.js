@@ -23,11 +23,11 @@ module.exports = {
   //   {
   //     plugin: CracoOutputPlugin,
   //     options: {
-  //       publicPath: '/main/micro-react'
+  //       publicPath: '/main/microReact17'
   //     }
   //   }
   // ],
-  publicPath: "/micro-react",
+  publicPath: "/microReact17",
   devServer: {
     port: 7800, // 这里的端口是必须和父应用配置的子应用端口一致
     open: false,

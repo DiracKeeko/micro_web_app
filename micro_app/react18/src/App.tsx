@@ -11,7 +11,7 @@ interface AppProps {
 }
 
 // 主应用组件
-const App: React.FC<AppProps> = ({routerBase = "micro-react"}) => {
+const App: React.FC<AppProps> = ({routerBase = "microReact17"}) => {
   return (
     <BrowserRouter basename={routerBase}>
       <div id="app">

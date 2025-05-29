@@ -22,7 +22,7 @@ export const microApps = [
     activeRule: "/micro-vue2",
     container: "#micro-app-container", // 子应用挂载的div
     props: {
-      routerBase: "/main/micro-vue2",
+      routerBase: "/main/microVue2",
       // mainStore: store,
       // user: utils.getStorage('user')
     },
@@ -33,7 +33,7 @@ export const microApps = [
     activeRule: "/micro-react",
     container: "#micro-app-container", // 子应用挂载的div
     props: {
-      routerBase: "/main/micro-react",
+      routerBase: "/main/microReact17",
       // mainStore: store,
       // user: utils.getStorage('user')
     },
