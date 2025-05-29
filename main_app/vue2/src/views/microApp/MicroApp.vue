@@ -105,12 +105,17 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<!-- <style lang="scss" scoped> -->
+<!-- 不可以使用 scoped 否则 `#micro-app-container > div` 样式不生效 -->
+<style lang="scss">
 #micro-app-container {
   box-sizing: border-box;
   width: 100%;
   height: calc(100vh - 60px);
   border: 1px solid blue;
   overflow-x: hidden;
+  > div {
+    height: 100%;
+  }
 }
 </style>
