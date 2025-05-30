@@ -52,7 +52,7 @@ const menuConfigArr = [
     "menuId": 6,
     "menuItem": [
       {
-        "index": "/micro-vue2/home",
+        "index": "/mv2/home",
         "title": "microVue2Home",
         "hidden": 0,
         "menuType": "inner",
@@ -60,7 +60,7 @@ const menuConfigArr = [
         "componentPath": "microApp/MicroApp.vue"
       },
       {
-        "index": "/micro-vue2/about",
+        "index": "/mv2/about",
         "title": "microVue2About",
         "hidden": 0,
         "menuType": "inner",
@@ -68,7 +68,7 @@ const menuConfigArr = [
         "componentPath": "microApp/MicroApp.vue"
       },
       {
-        "index": "/micro-react/home",
+        "index": "/mr18/home",
         "title": "microReactHome",
         "hidden": 0,
         "menuType": "inner",
@@ -76,7 +76,7 @@ const menuConfigArr = [
         "componentPath": "microApp/MicroApp.vue"
       },
       {
-        "index": "/micro-react/about",
+        "index": "/mr18/about",
         "title": "microReactAbout",
         "hidden": 0,
         "menuType": "inner",
@@ -84,7 +84,7 @@ const menuConfigArr = [
         "componentPath": "microApp/MicroApp.vue"
       },
       {
-        "index": "/micro-react/hashAnchor",
+        "index": "/mr18/hashAnchor",
         "title": "microReactHashAnchor",
         "hidden": 0,
         "menuType": "inner",
@@ -127,7 +127,7 @@ function createRouteArrByMenuArr(menuArr) {
   const routeArr = [];
   recursionPushRouteItem(menuArr, routeArr);
   // routeArr.push({
-  //   path: '/:micro(micro-vue2|micro-react)/:endPath(.*)', // /micro-vue/ 或者 /micro-react/ 调用MicroApp组件
+  //   path: '/:micro(mv2|mr18)/:endPath(.*)', // /micro-vue/ 或者 /mr18/ 调用MicroApp组件
   //   name: 'microApp',
   //   meta: { title: 'micro-app' },
   //   component: () => import('@/views/microApp/MicroApp.vue')

@@ -28,7 +28,7 @@ const routes = [
   // { path: "*", redirect: "/home" },
 ];
 
-const baseUrl = window.__POWERED_BY_QIANKUN__ ? "/main/microVue2" : "microVue2";
+const baseUrl = window.__POWERED_BY_QIANKUN__ ? "/main/mv2" : "microVue2";
 const router = new VueRouter({
   mode: "history",
   base: baseUrl, // 访问/vue的时候加载
