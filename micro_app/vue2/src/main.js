@@ -1,14 +1,15 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from './router'
+import { createRouter } from './router'
 
 // Vue.config.productionTip = false
-
 
 let instance = null
 
 function render(props = {}) {
-  const { container } = props;
+  const { container, routerBase } = props;
+  
+  const router = createRouter(routerBase || "/microVue2")
   instance = new Vue({
     router,
     render: (h) => h(App),

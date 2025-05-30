@@ -9,7 +9,7 @@ let root: ReactDOM.Root | null = null;
 
 function render(props: { container?: HTMLElement, routerBase?: string }) {
   const { container, routerBase } = props;
-  console.log("routerBase->", routerBase);
+  console.log("routerBase in react18->", routerBase);
   root = ReactDOM.createRoot(
     container
       ? container.querySelector("#root")!

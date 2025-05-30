@@ -1,10 +1,11 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import Home from "@/views/Home.vue";
+import About from "@/views/About.vue";
 
 Vue.use(VueRouter);
 
-// ##坑1 子应用所有的path 都必须有值 "/home", "/about" (不要使用 "/" 否则有坑) 
+// ##坑1 子应用所有的path 都必须有值 "/home", "/about" (不要使用 "/" 否则有坑)
 const routes = [
   {
     path: "/home",
@@ -14,11 +15,10 @@ const routes = [
   {
     path: "/about",
     name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
+    component: About,
     // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    // ↓ vue子应用，不可以使用lazy-load，否则开发环境下无法在主应用中访问子应用这个lazy-load的页面
+    // component: () => import("@/views/About.vue"), 
   },
   // ##坑2 ↓ 子应用不可以出现下面这一行 未匹配重定向 配置
   /* 
@@ -28,12 +28,13 @@ const routes = [
   // { path: "*", redirect: "/home" },
 ];
 
-const baseUrl = window.__POWERED_BY_QIANKUN__ ? "/main/mv2" : "microVue2";
-const router = new VueRouter({
-  mode: "history",
-  base: baseUrl, // 访问/vue的时候加载
-  // ## 子应用的base 必须和主应用的 activeRule 一致
-  routes,
-});
+const createRouter = (baseUrl = "/microVue2") => {
+  return new VueRouter({
+    mode: "history",
+    base: baseUrl, // 访问/vue的时候加载
+    // ## 子应用的base 必须和主应用的 activeRule 一致
+    routes,
+  });
+};
 
-export default router;
+export { createRouter };
