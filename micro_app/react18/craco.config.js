@@ -1,7 +1,7 @@
 // craco.config.js
 const path = require("path");
 const CracoOutputPlugin = require("./cracoConfig/craco-output");
-const pkgName = 'microReact'
+const pkgName = "microReact";
 
 module.exports = {
   webpack: {
@@ -23,11 +23,11 @@ module.exports = {
   //   {
   //     plugin: CracoOutputPlugin,
   //     options: {
-  //       publicPath: '/main/microReact18'
-  //     }
-  //   }
+  //       publicPath: process?.env?.PUBLIC_URL ?? "./",
+  //     },
+  //   },
   // ],
-  publicPath: "/microReact18",
+  publicPath: process?.env?.PUBLIC_URL ?? "./",
   devServer: {
     port: 7800, // 这里的端口是必须和父应用配置的子应用端口一致
     open: false,
