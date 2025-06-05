@@ -1,8 +1,10 @@
 /* eslint-disable */
 if (window.__POWERED_BY_QIANKUN__) {
   __webpack_public_path__ = window.__INJECTED_PUBLIC_PATH_BY_QIANKUN__;
+  // console.log("__INJECTED_PUBLIC_PATH_BY_QIANKUN__ ->", window.__INJECTED_PUBLIC_PATH_BY_QIANKUN__);
+  // __INJECTED_PUBLIC_PATH_BY_QIANKUN__ -> http://localhost:7800/microReact18/
 } else {
-  __webpack_public_path__ = process.env.PUBLIC_URL || '/';
+  __webpack_public_path__ = process.env.PUBLIC_URL || '/microReact18/';
 }
 
 /* 

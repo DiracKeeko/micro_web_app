@@ -12,6 +12,8 @@ module.exports = {
       // 设置项目的上下文目录
       // 设置静态资源公共路径
       webpackConfig.output.library = { name: `${pkgName}`, type: "umd" };
+      webpackConfig.output.publicPath = process?.env?.PUBLIC_URL ?? "./";
+      
       // webpack 5 需要把 jsonpFunction 替换成 chunkLoadingGlobal
       webpackConfig.output.chunkLoadingGlobal = `webpackJsonp_${pkgName}`;
       webpackConfig.output.globalObject = "window";
@@ -27,7 +29,7 @@ module.exports = {
   //     },
   //   },
   // ],
-  publicPath: process?.env?.PUBLIC_URL ?? "./",
+  // publicPath: process?.env?.PUBLIC_URL ?? "./",
   devServer: {
     port: 7800, // 这里的端口是必须和父应用配置的子应用端口一致
     open: false,
