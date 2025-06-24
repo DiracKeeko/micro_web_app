@@ -3,6 +3,8 @@ const path = require("path");
 const CracoOutputPlugin = require("./cracoConfig/craco-output");
 const pkgName = "microReact";
 
+console.log("PUBLIC_URL:", process.env.PUBLIC_URL)
+
 module.exports = {
   webpack: {
     alias: {
@@ -12,8 +14,12 @@ module.exports = {
       // 设置项目的上下文目录
       // 设置静态资源公共路径
       webpackConfig.output.library = { name: `${pkgName}`, type: "umd" };
-      webpackConfig.output.publicPath = process?.env?.PUBLIC_URL ?? "./";
-      
+
+      const publicPath = process.env.PUBLIC_URL || "./";
+      webpackConfig.output.publicPath = publicPath.endsWith("/")
+        ? publicPath
+        : publicPath + "/";
+
       // webpack 5 需要把 jsonpFunction 替换成 chunkLoadingGlobal
       webpackConfig.output.chunkLoadingGlobal = `webpackJsonp_${pkgName}`;
       webpackConfig.output.globalObject = "window";

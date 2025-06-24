@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     gotoSubReact(fundId) {
-      let reactBaseUrl = '/main/micro-react/about';
+      let reactBaseUrl = '/main/mr18/about';
       if (fundId) {
         reactBaseUrl = `${reactBaseUrl}?fundId=${fundId}`;
       }
